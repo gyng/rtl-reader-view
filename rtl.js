@@ -40,6 +40,7 @@ javascript: (function() {
 
     body.sans-serif *:lang(zh) {
       font-family: Tahoma, Arial, Helvetica, 'Microsoft YaHei New', 'Microsoft Yahei', '微软雅黑', 宋体, SimSun, STXihei, '华文细黑', sans-serif !important;
+      font-weight: 200;
     }
 
     *:lang(zh) emp {
