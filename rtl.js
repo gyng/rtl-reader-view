@@ -2,11 +2,11 @@ javascript: (function() {
   const css = `
     :root {
       --line-height-scale: 1.3;
+      --max-width-to-height-scale: 1.0;
       --font-size-scale: 1.0;
     }
 
     body {
-      max-height: 0;
       padding: 0 !important;
       margin: 0 !important;
       overflow-x: auto !important;
@@ -23,18 +23,22 @@ javascript: (function() {
       --font-size-scale: 1.5;
     }
 
+    *[lang=zh] {
+      font-family: Georgia, 'Times New Roman', 'FangSong', '仿宋', STFangSong, '华文仿宋', serif !important;
+    }
+
     p {
       margin: -10px -10px -10px 20px !important;
     }
 
     #container {
       text-combine-upright: digits 4;
-      max-height: calc(100% - 64px * 2);
       max-width: 100% !important;
+      height: calc(100% - 128px);
       writing-mode: vertical-rl;
       position: fixed;
       overflow-x: auto;
-      padding: 64px 64px 64px 0;
+      padding: 64px 0 64px 0;
     }
 
     #reader-toolbar {
@@ -62,11 +66,11 @@ javascript: (function() {
     }
 
     .line-height2 {
-      line-height: 1.2em !important;
+      line-height: calc(1.2em * var(--line-height-scale)) !important;
     }
 
     .line-height3 {
-      line-height: 1.4em !important;
+      line-height: calc(1.4em * var(--line-height-scale)) !important;
     }
 
     .line-height4 {
@@ -74,23 +78,59 @@ javascript: (function() {
     }
 
     .line-height5 {
-      line-height: 1.8em !important;
+      line-height: calc(1.8em * var(--line-height-scale)) !important;
     }
 
     .line-height6 {
-      line-height: 2.0em !important;
+      line-height: calc(2.0em * var(--line-height-scale)) !important;
     }
 
     .line-height7 {
-      line-height: 2.2em !important;
+      line-height: calc(2.2em * var(--line-height-scale)) !important;
     }
 
     .line-height8 {
-      line-height: 2.4em !important;
+      line-height: calc(2.4em * var(--line-height-scale)) !important;
     }
 
     .line-height9 {
-      line-height: 2.6em !important;
+      line-height: calc(2.6em * var(--line-height-scale)) !important;
+    }
+
+    .content-width1 > .content {
+      max-height: calc(20em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width2 > .content {
+      max-height: calc(25em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width3 > .content {
+      max-height: calc(30em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width4 > .content {
+      max-height: calc(35em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width5 > .content {
+      max-height: calc(40em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width6 > .content {
+      max-height: calc(45em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width7 > .content {
+      max-height: calc(50em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width8 > .content {
+      max-height: calc(55em * var(--max-width-to-height-scale)) !important;
+    }
+
+    .content-width9 > .content {
+      max-height: calc(60em * var(--max-width-to-height-scale)) !important;
     }
   `;
 
