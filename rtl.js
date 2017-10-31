@@ -6,6 +6,13 @@ javascript: (function() {
       --font-size-scale: 1.0;
     }
 
+    * {
+      max-height: 100%;
+      max-width: unset !important;
+      width: auto;
+      text-underline-position: left;
+    }
+
     body {
       padding: 0 !important;
       margin: 0 !important;
@@ -23,13 +30,29 @@ javascript: (function() {
       --font-size-scale: 1.5;
     }
 
-    *[lang=zh] {
+    *:lang(ja) emp {
+      text-emphasis-style: filled sesame;
+    }
+
+    *:lang(zh) {
       font-family: Georgia, 'Times New Roman', 'FangSong', '仿宋', STFangSong, '华文仿宋', serif !important;
+    }
+
+    *:lang(zh) emp {
+      text-emphasis-style: filled dot;
+    }
+
+    ruby {
+      text-emphasis: none;
     }
 
     p {
       margin: -10px -10px -10px 20px !important;
     }
+
+    li::marker {
+      text-combine-upright: digits;
+    } 
 
     #container {
       text-combine-upright: digits 4;
@@ -143,9 +166,35 @@ javascript: (function() {
     style.appendChild(document.createTextNode(css));
   }
   document.head.appendChild(style);
+  
+  function getScrollLineHeight() {
+    var r;
+    var iframe = document.createElement('iframe');
+    iframe.src = '#';
+    document.body.appendChild(iframe);
+    var iwin = iframe.contentWindow;
+    var idoc = iwin.document;
+    idoc.open();
+    idoc.write(
+      '<!DOCTYPE html><html><head></head><body><span>a</span></body></html>'
+    );
+    idoc.close();
+    var span = idoc.body.firstElementChild;
+    r = span.offsetHeight;
+    document.body.removeChild(iframe);
+    return r;
+  }
 
   const container = document.getElementById('container');
+  const scrollLineHeight = getScrollLineHeight();
+
   document.body.addEventListener('wheel', function (e) {
+    if (e.deltaMode === 1) {
+      container.scrollLeft -= e.deltaY * scrollLineHeight;
+    } else if (e.deltaMode === 2) {
+      container.scrollLeft -= e.deltaY * window.innerWidth;
+    }
+
     container.scrollLeft -= e.deltaY;
   })
 })();
