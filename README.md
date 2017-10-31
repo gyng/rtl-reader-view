@@ -16,7 +16,7 @@ This is mainly a proof of concept. Not all vertical text CSS rules are supported
 
 ## Unsupported CSS
 
-* Upright <ruby>縦中横<rt>たてちゅうよこ</rt></ruby> (tate chu yoko) for digits: `text-combine-upright: digits 4;`
+* Upright [縦中横](https://ja.wikipedia.org/wiki/%E7%B8%A6%E4%B8%AD%E6%A8%AA) (tate chu yoko) for digits: `text-combine-upright: digits 4;`
 * Upright list markers
 * Underlines on the left: `text-underline-position: left;`
 
