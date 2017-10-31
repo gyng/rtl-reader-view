@@ -72,6 +72,10 @@ javascript: (function() {
       border-right: none;
     }
 
+    #reader-header {
+      margin-right: 100px;
+    }
+
     .dropdown-popup {
       left: unset !important;
       right: 48px;
