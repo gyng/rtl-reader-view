@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            max-width: 1024px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 50%;
+            border: solid 1px grey;
+        }
+
+        article {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        article div {
+            width: 80%;
+            padding: 20px;
+            background-color: lightgray;
+        }
+    </style>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <article>
+        <img src="screenshot.png" title="Screenshot" />
+
+        <p>
+            <a href="
+javascript: (function() {
+  const css = `
+    :root {
+      --line-height-scale: 1.5;
+      --font-size-scale: 1.0;
+    }
+
+    body {
+      max-height: 0;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow-x: auto !important;
+    }
+
+    body.sans-serif {
+      font-family: Tahoma, Arial, Helvetica, 'Microsoft YaHei New',
+        'Microsoft Yahei', '微软雅黑', 宋体, SimSun, STXihei, '华文细黑', sans-serif !important;
+    }
+
+    body.serif {
+      font-family: Georgia, 'Times New Roman', 'FangSong', '仿宋', STFangSong, '华文仿宋', serif !important;
+      --font-size-scale: 1.5;
+    }
+
+    p {
+      margin: -10px -10px -10px 20px !important;
+    }
+
+    #container {
+      max-height: calc(100% - 64px * 2);
+      max-width: 100% !important;
+      writing-mode: vertical-rl;
+      position: fixed;
+      overflow-x: auto;
+      padding: 64px 64px 64px 0;
+    }
+
+    #reader-toolbar {
+      left: unset !important;
+      right: 0;
+      border-left: 1px solid #b5b5b5;
+      border-right: none;
+    }
+
+    .dropdown-popup {
+      left: unset !important;
+      right: 48px;
+    }
+
+    #reader-title {
+      margin: 0 60px 0 30px !important;
+    }
+
+    .meta-data {
+      margin: 0 0 0 15px !important;
+    }
+
+    .line-height1 {
+      line-height: calc(1em * var(--line-height-scale)) !important;
+    }
+
+    .line-height2 {
+      line-height: 1.2em !important;
+    }
+
+    .line-height3 {
+      line-height: 1.4em !important;
+    }
+
+    .line-height4 {
+      line-height: calc(1.6em * var(--line-height-scale)) !important;
+    }
+
+    .line-height5 {
+      line-height: 1.8em !important;
+    }
+
+    .line-height6 {
+      line-height: 2.0em !important;
+    }
+
+    .line-height7 {
+      line-height: 2.2em !important;
+    }
+
+    .line-height8 {
+      line-height: 2.4em !important;
+    }
+
+    .line-height9 {
+      line-height: 2.6em !important;
+    }
+  `;
+
+  const style = document.createElement('style');
+  style.type = 'text/css';
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+  document.head.appendChild(style);
+
+  const container = document.getElementById('container');
+  document.body.addEventListener('wheel', function (e) {
+    container.scrollLeft -= e.deltaY;
+  })
+})();
+                ">
+                <h1>RTL READER VIEW</h1>
+            </a>
+        </p>
+
+        <p>Activate reader view, then use this bookmarklet to convert Firefox's reader view to top-down, right-to-left.</p>
+
+        <div>
+
+            <p>２８
+                <ruby>日
+                    <rt>にち</rt>
+                </ruby>、
+                <span>
+                    <ruby>東京
+                        <rt>とうきょう</rt>
+                    </ruby>
+                </span>の
+                <span>
+                    <ruby>市ヶ谷
+                        <rt>いちがや</rt>
+                    </ruby>
+                </span>に「
+                <span>
+                    <ruby>東京
+                        <rt>とうきょう</rt>
+                    </ruby>アニメセンター</span>」が
+                <a>
+                    <span class="under">オープン</span>
+                </a>しました。
+                <a>
+                    <span class="under">アニメ</span>
+                </a>の
+                <ruby>会社
+                    <rt>かいしゃ</rt>
+                </ruby>の
+                <a>
+                    <ruby>
+                        <span class="under">団体</span>
+                        <rt>だんたい</rt>
+                    </ruby>
+                </a>と
+                <a>
+                    <ruby>
+                        <span class="under">印刷</span>
+                        <rt>いんさつ</rt>
+                    </ruby>
+                </a>
+                <ruby>会社
+                    <rt>がいしゃ</rt>
+                </ruby>が
+                <span>
+                    <ruby>日本
+                        <rt>にっぽん</rt>
+                    </ruby>
+                </span>の
+                <a>
+                    <span class="under">アニメ</span>
+                </a>をもっと
+                <ruby>知
+                    <rt>し</rt>
+                </ruby>ってほしいと
+                <ruby>考
+                    <rt>かんが</rt>
+                </ruby>えてつくりました。</p>
+            <p>このセンターでは、
+                <a>
+                    <span class="under">アニメ</span>
+                </a>の
+                <a>
+                    <span class="under">キャラクター</span>
+                </a>と
+                <ruby>一緒
+                    <rt>いっしょ</rt>
+                </ruby>に
+                <ruby>写真
+                    <rt>しゃしん</rt>
+                </ruby>を
+                <ruby>撮
+                    <rt>と</rt>
+                </ruby>ることができます。
+                <ruby>昔
+                    <rt>むかし</rt>
+                </ruby>
+                <a>
+                    <ruby>
+                        <span class="under">人気</span>
+                        <rt>にんき</rt>
+                    </ruby>
+                </a>があった
+                <a>
+                    <span class="under">アニメ</span>
+                </a>を
+                <ruby>作
+                    <rt>つく</rt>
+                </ruby>るときに
+                <ruby>使
+                    <rt>つか</rt>
+                </ruby>った
+                <ruby>絵
+                    <rt>え</rt>
+                </ruby>を
+                <ruby>見
+                    <rt>み</rt>
+                </ruby>ることもできます。
+                <a>
+                    <span class="under">アニメ</span>
+                </a>や
+                <ruby>漫画
+                    <rt>まんが</rt>
+                </ruby>を
+                <ruby>作
+                    <rt>つく</rt>
+                </ruby>ることに
+                <ruby>興味
+                    <rt>きょうみ</rt>
+                </ruby>を
+                <ruby>持
+                    <rt>も</rt>
+                </ruby>ってもらうため、
+                <ruby>絵
+                    <rt>え</rt>
+                </ruby>をかくときに
+                <ruby>使
+                    <rt>つか</rt>
+                </ruby>う
+                <ruby>新
+                    <rt>あたら</rt>
+                </ruby>しい
+                <ruby>機械
+                    <rt>きかい</rt>
+                </ruby>を
+                <ruby>使
+                    <rt>つか</rt>
+                </ruby>ってみる
+                <a>
+                    <span class="under">コーナー</span>
+                </a>もあります。
+                <a>
+                    <span class="under">アニメ</span>
+                </a>を
+                <ruby>作
+                    <rt>つく</rt>
+                </ruby>る
+                <ruby>人
+                    <rt>ひと</rt>
+                </ruby>を
+                <ruby>育
+                    <rt>そだ</rt>
+                </ruby>てるため、
+                <a>
+                    <span class="under">プロ</span>
+                </a>の
+                <ruby>人
+                    <rt>ひと</rt>
+                </ruby>がインターネットで
+                <ruby>絵
+                    <rt>え</rt>
+                </ruby>のかき
+                <ruby>方
+                    <rt>かた</rt>
+                </ruby>などを
+                <ruby>教
+                    <rt>おし</rt>
+                </ruby>える
+                <ruby>講義
+                    <rt>こうぎ</rt>
+                </ruby>も
+                <ruby>行
+                    <rt>おこな</rt>
+                </ruby>うことにしています。</p>
+            <p>
+                <a>
+                    <ruby>
+                        <span class="under">印刷</span>
+                        <rt>いんさつ</rt>
+                    </ruby>
+                </a>
+                <ruby>会社
+                    <rt>がいしゃ</rt>
+                </ruby>の
+                <ruby>人
+                    <rt>ひと</rt>
+                </ruby>は「
+                <span>
+                    <ruby>日本
+                        <rt>にっぽん</rt>
+                    </ruby>
+                </span>の
+                <a>
+                    <span class="under">アニメ</span>
+                </a>は
+                <ruby>外国
+                    <rt>がいこく</rt>
+                </ruby>でも
+                <a>
+                    <ruby>
+                        <span class="under">人気</span>
+                        <rt>にんき</rt>
+                    </ruby>
+                </a>があります。このセンターから
+                <a>
+                    <span class="under">アニメ</span>
+                </a>の
+                <ruby>文化
+                    <rt>ぶんか</rt>
+                </ruby>を
+                <ruby>伝
+                    <rt>つた</rt>
+                </ruby>えたいです」と
+                <ruby>話
+                    <rt>はな</rt>
+                </ruby>しています。</p>
+
+            <small>
+                <a href="http://www3.nhk.or.jp/news/easy/k10011200331000/k10011200331000.html">source: NHK Easy News</a>
+            </small>
+        </div>
+    </article>
+
+    <p>
+        <a href="https://github.com/gyng/rtl-reader-view">GitHub repository</a>
+    </p>
+</body>
+
+</html>
