@@ -39,6 +39,7 @@ javascript: (function() {
       position: fixed;
       overflow-x: auto;
       padding: 64px 0 64px 0;
+      min-width: 100%;
     }
 
     #reader-toolbar {
