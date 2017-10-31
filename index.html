@@ -68,7 +68,8 @@ javascript: (function() {
     }
 
     body.serif {
-      font-family: Georgia, 'Times New Roman', 'FangSong', '仿宋', STFangSong, '华文仿宋', serif !important;
+      font-family: Georgia, 'Times New Roman', "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝",
+        'FangSong', '仿宋', STFangSong, '华文仿宋', serif !important;
       --font-size-scale: 1.5;
     }
 
@@ -77,6 +78,7 @@ javascript: (function() {
     }
 
     #container {
+      text-combine-upright: digits 4;
       max-height: calc(100% - 64px * 2);
       max-width: 100% !important;
       writing-mode: vertical-rl;
