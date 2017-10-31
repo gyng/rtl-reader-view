@@ -9,7 +9,7 @@ This is mainly a proof of concept. Not all vertical text CSS rules are supported
 ## Supported
 
 * Reader view controls
-* Scroll direction
+* Scroll direction (wheel, home keys)
 * Defaults to ja fonts, overridden by `lang=zh`
 * Vertical punctuation
 * `text-emphasis` on `<emp>` tags [圏点](https://ja.wikipedia.org/wiki/%E5%9C%8F%E7%82%B9), [着重号](https://zh.wikipedia.org/wiki/%E7%9D%80%E9%87%8D%E5%8F%B7)

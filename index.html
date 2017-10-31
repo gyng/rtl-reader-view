@@ -247,6 +247,18 @@ javascript: (function() {
   const container = document.getElementById('container');
   const scrollLineHeight = getScrollLineHeight();
 
+  document.body.addEventListener('keydown', function (e) {
+    if (e.keyCode === 34) {
+      container.scrollLeft -= (window.innerWidth - 28);
+    } else if (e.keyCode === 33) {
+      container.scrollLeft += (window.innerWidth - 28);
+    } else if (e.keyCode === 35) {
+      container.scrollLeft = -container.scrollWidth;
+    } else if (e.keyCode === 36) {
+      container.scrollLeft = 0;
+    }
+  });
+
   document.body.addEventListener('wheel', function (e) {
     if (e.deltaMode === 1) {
       container.scrollLeft -= e.deltaY * scrollLineHeight;
