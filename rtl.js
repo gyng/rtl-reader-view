@@ -20,8 +20,8 @@ javascript: (function() {
     }
 
     body.sans-serif {
-      font-family: Tahoma, Arial, Helvetica, 'Microsoft YaHei New',
-        'Microsoft Yahei', '微软雅黑', 宋体, SimSun, STXihei, '华文细黑', sans-serif !important;
+      font-family: Tahoma, Arial, Helvetica, 'ヒラギノ角ゴ ProN W3','ヒラギノ角ゴ ProN','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,'Meiryo UI','A-OTF 新ゴ Pr6N R','小塚ゴシック Pr6N M',
+        'Microsoft YaHei New', 'Microsoft Yahei', '微软雅黑', 宋体, SimSun, STXihei, '华文细黑', sans-serif !important;
     }
 
     body.serif {
@@ -34,8 +34,12 @@ javascript: (function() {
       text-emphasis-style: filled sesame;
     }
 
-    *:lang(zh) {
+    body.serif *:lang(zh) {
       font-family: Georgia, 'Times New Roman', 'FangSong', '仿宋', STFangSong, '华文仿宋', serif !important;
+    }
+
+    body.sans-serif *:lang(zh) {
+      font-family: Tahoma, Arial, Helvetica, 'Microsoft YaHei New', 'Microsoft Yahei', '微软雅黑', 宋体, SimSun, STXihei, '华文细黑', sans-serif !important;
     }
 
     *:lang(zh) emp {
