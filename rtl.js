@@ -1,7 +1,7 @@
 javascript: (function() {
   const css = `
     :root {
-      --line-height-scale: 1.5;
+      --line-height-scale: 1.3;
       --font-size-scale: 1.0;
     }
 
