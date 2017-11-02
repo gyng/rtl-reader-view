@@ -175,18 +175,6 @@ javascript: (function() {
     }
   `;
 
-  const toggleButtonCss = `
-    #rtl-toggle-button {
-      background-image: url(chrome://global/skin/reader/RM-Line-Height-Minus-38x14.svg);
-      background-size: 16px 16px !important;
-      transform: rotate(90deg);
-    }
-
-    #rtl-toggle-button.deactivated {
-      transform:(0deg);
-    }
-  `;
-
   const style = document.createElement('style');
   style.id = 'rtl-style';
   style.type = 'text/css';
@@ -195,15 +183,7 @@ javascript: (function() {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-  const buttonStyle = document.createElement('style');
-  buttonStyle.id = 'rtl-style-button';
-  buttonStyle.type = 'text/css';
-  if (buttonStyle.styleSheet) {
-    buttonStyle.styleSheet.cssText = css;
-  } else {
-    buttonStyle.appendChild(document.createTextNode(css));
-  }
-  document.head.appendChild(buttonStyle);
+  document.head.appendChild(style);
 
   function getScrollLineHeight() {
     var r;
@@ -252,9 +232,26 @@ javascript: (function() {
   const rtlToggle = document.createElement('button');
   rtlToggle.id = 'rtl-toggle-button';
   rtlToggle.classList.add('button');
+  rtlToggle.style.backgroundImage = `url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnDQogICAgd2lkdGg9JzM4Jw0KICAgIGhlaWdodD0nMTQnDQogICAgdmlld0JveD0nMCAwIDM4IDE0Jw0KICAgIGZpbGw9JyM4MDgwODAnPg0KICAgIDxyZWN0IHg9JzAnIHk9JzAnIHdpZHRoPScyOCcgaGVpZ2h0PScyJy8+DQogICAgPHJlY3QgeD0nMCcgeT0nNicgd2lkdGg9JzM4JyBoZWlnaHQ9JzInLz4NCiAgICA8cmVjdCB4PScwJyB5PScxMicgd2lkdGg9JzE4JyBoZWlnaHQ9JzInLz4NCiAgPC9zdmc+)`;
+  rtlToggle.style.backgroundSize = '16px 16px';
+  rtlToggle.style.transform = 'rotate(0deg)';
+  rtlToggle.setAttribute('title', 'Switch to left-to-right view');
 
   rtlToggle.addEventListener('click', function () {
     rtlToggle.classList.toggle('deactivated');
+    if (rtlToggle.classList.contains('deactivated')) {
+      rtlToggle.style.transform = 'rotate(90deg)';
+      rtlToggle.setAttribute('title', 'Switch to right-to-left view');
+      rtlToggle.style.borderBottom = 'unset';
+      rtlToggle.style.borderTop = '1px solid #b5b5b5';
+      style.remove();
+    } else {
+      rtlToggle.style.transform = 'rotate(0deg)';
+      rtlToggle.setAttribute('title', 'Switch to left-to-right view');
+      rtlToggle.style.borderBottom = '1px solid #c1c1c1';
+      rtlToggle.style.borderTop = 'unset';
+      document.head.appendChild(style);
+    }
   });
 
   toolbar.appendChild(rtlToggle);
