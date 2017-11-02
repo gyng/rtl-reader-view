@@ -57,7 +57,7 @@ javascript: (function() {
 
     li::marker {
       text-combine-upright: digits;
-    } 
+    }
 
     #container {
       text-combine-upright: digits 4;
@@ -68,6 +68,8 @@ javascript: (function() {
       overflow-x: auto;
       padding: 64px 0 64px 0;
       min-width: 100%;
+      text-align: justify;
+      hanging-punctuation: end;
     }
 
     #reader-toolbar {
@@ -175,7 +177,7 @@ javascript: (function() {
     style.appendChild(document.createTextNode(css));
   }
   document.head.appendChild(style);
-  
+
   function getScrollLineHeight() {
     var r;
     var iframe = document.createElement('iframe');
