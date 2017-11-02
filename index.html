@@ -283,13 +283,16 @@ javascript: (function() {
   });
 
   document.body.addEventListener('wheel', function (e) {
-    if (e.deltaMode === 1) {
-      container.scrollLeft -= e.deltaY * scrollLineHeight;
-    } else if (e.deltaMode === 2) {
-      container.scrollLeft -= e.deltaY * window.innerWidth;
-    }
+    if (e.deltaX === 0) {
+      if (e.deltaMode === 1) {
+        container.scrollLeft -= e.deltaY * scrollLineHeight;
+      } else if (e.deltaMode === 2) {
+        container.scrollLeft -= e.deltaY * window.innerWidth;
+      }
 
-    container.scrollLeft -= e.deltaY;
+      container.scrollLeft -= e.deltaY;
+      e.preventDefault();
+    }
   });
 
   const toolbar = document.getElementById('reader-toolbar');
