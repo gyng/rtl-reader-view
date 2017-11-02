@@ -175,14 +175,35 @@ javascript: (function() {
     }
   `;
 
+  const toggleButtonCss = `
+    #rtl-toggle-button {
+      background-image: url(chrome://global/skin/reader/RM-Line-Height-Minus-38x14.svg);
+      background-size: 16px 16px !important;
+      transform: rotate(90deg);
+    }
+
+    #rtl-toggle-button.deactivated {
+      transform:(0deg);
+    }
+  `;
+
   const style = document.createElement('style');
+  style.id = 'rtl-style';
   style.type = 'text/css';
   if (style.styleSheet) {
     style.styleSheet.cssText = css;
   } else {
     style.appendChild(document.createTextNode(css));
   }
-  document.head.appendChild(style);
+  const buttonStyle = document.createElement('style');
+  buttonStyle.id = 'rtl-style-button';
+  buttonStyle.type = 'text/css';
+  if (buttonStyle.styleSheet) {
+    buttonStyle.styleSheet.cssText = css;
+  } else {
+    buttonStyle.appendChild(document.createTextNode(css));
+  }
+  document.head.appendChild(buttonStyle);
 
   function getScrollLineHeight() {
     var r;
@@ -225,5 +246,16 @@ javascript: (function() {
     }
 
     container.scrollLeft -= e.deltaY;
-  })
+  });
+
+  const toolbar = document.getElementById('reader-toolbar');
+  const rtlToggle = document.createElement('button');
+  rtlToggle.id = 'rtl-toggle-button';
+  rtlToggle.classList.add('button');
+
+  rtlToggle.addEventListener('click', function () {
+    rtlToggle.classList.toggle('deactivated');
+  });
+
+  toolbar.appendChild(rtlToggle);
 })();

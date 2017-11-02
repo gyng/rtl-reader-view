@@ -15,6 +15,7 @@ See the [project page](https://gyng.github.io/rtl-reader-view).
 ### Supported features
 
 * Reader view controls
+* Toggle button in reader view
 * Scroll direction (wheel, home keys)
 * Defaults to ja fonts, overridden by `lang=zh`
 * Vertical punctuation
