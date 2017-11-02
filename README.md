@@ -31,6 +31,7 @@ See the [project page](https://gyng.github.io/rtl-reader-view).
 ### Other notes
 
 * Times override for Georgia old-style numerals using `@font-face` and `unicode-range`
+* Full-width commas in Chinese text are still curly `，` instead of being ideographic commas `、`
 
 ## Building `index.html`
 

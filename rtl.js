@@ -40,13 +40,13 @@ javascript: (function() {
       text-emphasis-style: filled sesame;
     }
 
-    body.serif *:lang(zh) {
-      font-family: TimesNumerals, Georgia, 'Times New Roman', 宋体, SimSun, 华文细黑, STXihei, serif !important;
-    }
-
     body.sans-serif *:lang(zh) {
       font-family: Tahoma, Arial, Helvetica, 'Microsoft YaHei New', 'Microsoft Yahei', '微软雅黑', 宋体, SimSun, STXihei, '华文细黑', sans-serif !important;
       font-weight: 200;
+    }
+
+    body.serif *:lang(zh) {
+      font-family: TimesNumerals, Georgia, 'Times New Roman', 宋体, SimSun, 华文细黑, STXihei, serif !important;
     }
 
     *:lang(zh) emp {
