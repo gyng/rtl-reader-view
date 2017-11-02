@@ -65,6 +65,10 @@ javascript: (function() {
       text-combine-upright: digits;
     }
 
+    .content {
+      padding: 0 0 0 64px;
+    }
+
     #container {
       text-combine-upright: digits 4;
       max-width: 100% !important;
