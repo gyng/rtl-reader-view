@@ -6,7 +6,13 @@ Activate Firefox's [reader view](https://support.mozilla.org/en-US/kb/firefox-re
 
 This is mainly a proof of concept. Not all vertical text CSS rules are supported by Firefox yet: see the [draft specification](https://drafts.csswg.org/css-writing-modes-4/#text-combine-upright) and [Styling vertical Chinese, Japanese, Korean and Mongolian text](https://www.w3.org/International/articles/vertical-text/) for details.
 
-## Supported
+## Usage
+
+See the [project page](https://gyng.github.io/rtl-reader-view).
+
+## Notes
+
+### Supported features
 
 * Reader view controls
 * Scroll direction (wheel, home keys)
@@ -14,16 +20,16 @@ This is mainly a proof of concept. Not all vertical text CSS rules are supported
 * Vertical punctuation
 * `text-emphasis` on `<emp>` tags [圏点](https://ja.wikipedia.org/wiki/%E5%9C%8F%E7%82%B9), [着重号](https://zh.wikipedia.org/wiki/%E7%9D%80%E9%87%8D%E5%8F%B7)
 
-## Unsupported CSS
+### Unsupported
 
 * Upright [縦中横](https://ja.wikipedia.org/wiki/%E7%B8%A6%E4%B8%AD%E6%A8%AA) (tate chu yoko) for digits: `text-combine-upright: digits 4;`
 * Upright list markers
 * Underlines on the left: `text-underline-position: left;`
 * Hanging punctuation: `hanging-punctuation: end;`
 
-## Usage
+### Other notes
 
-See the [project page](https://gyng.github.io/rtl-reader-view).
+* Times override for Georgia old-style numerals using `@font-face` and `unicode-range`
 
 ## Building `index.html`
 

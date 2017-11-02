@@ -1,5 +1,11 @@
 javascript: (function() {
   const css = `
+    @font-face {
+      font-family: TimesNumerals;
+      src: local(Times New Roman), local(Times);
+      unicode-range: U+30-39;
+    }
+
     :root {
       --line-height-scale: 1.3;
       --max-width-to-height-scale: 1.0;
@@ -25,7 +31,7 @@ javascript: (function() {
     }
 
     body.serif {
-      font-family: Georgia, 'Times New Roman', 'ヒラギノ明朝 Pro W6', 'Hiragino Mincho Pro', 'HGS明朝E', 'ＭＳ Ｐ明朝',
+      font-family: TimesNumerals, Georgia, 'Times New Roman', 'ヒラギノ明朝 Pro W6', 'Hiragino Mincho Pro', 'HGS明朝E', 'ＭＳ Ｐ明朝',
         宋体, SimSun, 华文细黑, STXihei, serif !important;
       --font-size-scale: 1.5;
     }
@@ -35,7 +41,7 @@ javascript: (function() {
     }
 
     body.serif *:lang(zh) {
-      font-family: Georgia, 'Times New Roman', 宋体, SimSun, 华文细黑, STXihei, serif !important;
+      font-family: TimesNumerals, Georgia, 'Times New Roman', 宋体, SimSun, 华文细黑, STXihei, serif !important;
     }
 
     body.sans-serif *:lang(zh) {
