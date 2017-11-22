@@ -1,0 +1,24 @@
+{
+  "extensionName": {
+    "message": "Save In…",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message":
+      "Saves media {image, video, audio, links, text} (check options) in directories relative to the default download directory.",
+    "description": "Description of the add-on."
+  },
+
+  "contextMenuItemOptions": {
+    "message": "Options",
+    "description":
+      "Title of context menu item that opens the options menu when clicked."
+  },
+
+  "contextMenuShowDefaultFolder": {
+    "message": "Open default folder",
+    "description":
+      "Title of context menu item that opens the default downloads directory in the system file manager when clicked."
+  }
+}

@@ -1,5 +1,5 @@
-javascript: (function() {
-  const css = `
+const RTL_READER = `(function() {
+  const css = \`
     @font-face {
       font-family: TimesNumerals;
       src: local(Times New Roman), local(Times);
@@ -177,7 +177,7 @@ javascript: (function() {
     .content-width9 > .content {
       max-height: calc(60em * var(--max-width-to-height-scale)) !important;
     }
-  `;
+  \`;
 
   const style = document.createElement('style');
   style.id = 'rtl-style';
@@ -239,7 +239,7 @@ javascript: (function() {
   const rtlToggle = document.createElement('button');
   rtlToggle.id = 'rtl-toggle-button';
   rtlToggle.classList.add('button');
-  rtlToggle.style.backgroundImage = `url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnDQogICAgd2lkdGg9JzM4Jw0KICAgIGhlaWdodD0nMTQnDQogICAgdmlld0JveD0nMCAwIDM4IDE0Jw0KICAgIGZpbGw9JyM4MDgwODAnPg0KICAgIDxyZWN0IHg9JzAnIHk9JzAnIHdpZHRoPScyOCcgaGVpZ2h0PScyJy8+DQogICAgPHJlY3QgeD0nMCcgeT0nNicgd2lkdGg9JzM4JyBoZWlnaHQ9JzInLz4NCiAgICA8cmVjdCB4PScwJyB5PScxMicgd2lkdGg9JzE4JyBoZWlnaHQ9JzInLz4NCiAgPC9zdmc+)`;
+  rtlToggle.style.backgroundImage = \`url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnDQogICAgd2lkdGg9JzM4Jw0KICAgIGhlaWdodD0nMTQnDQogICAgdmlld0JveD0nMCAwIDM4IDE0Jw0KICAgIGZpbGw9JyM4MDgwODAnPg0KICAgIDxyZWN0IHg9JzAnIHk9JzAnIHdpZHRoPScyOCcgaGVpZ2h0PScyJy8+DQogICAgPHJlY3QgeD0nMCcgeT0nNicgd2lkdGg9JzM4JyBoZWlnaHQ9JzInLz4NCiAgICA8cmVjdCB4PScwJyB5PScxMicgd2lkdGg9JzE4JyBoZWlnaHQ9JzInLz4NCiAgPC9zdmc+)\`;
   rtlToggle.style.backgroundSize = '16px 16px';
   rtlToggle.style.transform = 'rotate(0deg)';
   rtlToggle.setAttribute('title', 'Switch to left-to-right view');
@@ -262,4 +262,24 @@ javascript: (function() {
   });
 
   toolbar.appendChild(rtlToggle);
-})();
+});
+`;
+
+if (browser && browser.tabs && browser.tabs.onUpdated) {
+  browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    console.log("LOL")
+    console.log(tabId)
+    console.log(changeInfo)
+    console.log(tab)
+
+    console.log(tab.status, tab.isInReaderMode)
+    if (tab.status === 'complete' && tab.isInReaderMode) {
+      console.log("YES")
+      browser.tabs.executeScript(tabId, {
+        code: "alert(1)"
+      });
+    }
+  })
+} else {
+  eval(RTL_READER())
+}
