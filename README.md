@@ -1,6 +1,6 @@
 # rtl-reader-view
 
-![Screenshot](screenshot.png)
+![Screenshot](docs/screenshot.png)
 
 Activate Firefox's [reader view](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages) and then use this to convert it to top-down, right-to-left.
 
