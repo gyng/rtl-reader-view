@@ -179,6 +179,8 @@ javascript: (function() {
     }
   `;
 
+  let rtlToggled = true;
+
   const style = document.createElement('style');
   style.id = 'rtl-style';
   style.type = 'text/css';
@@ -211,6 +213,10 @@ javascript: (function() {
   const scrollLineHeight = getScrollLineHeight();
 
   document.body.addEventListener('keydown', function (e) {
+    if (!rtlToggled) {
+      return
+    }
+
     if (e.keyCode === 34) {
       container.scrollLeft -= (window.innerWidth - 28);
     } else if (e.keyCode === 33) {
@@ -223,6 +229,10 @@ javascript: (function() {
   });
 
   document.body.addEventListener('wheel', function (e) {
+    if (!rtlToggled) {
+      return;
+    }
+
     if (e.deltaX === 0) {
       if (e.deltaMode === 1) {
         container.scrollLeft -= e.deltaY * scrollLineHeight;
@@ -245,6 +255,7 @@ javascript: (function() {
   rtlToggle.setAttribute('title', 'Switch to left-to-right view');
 
   rtlToggle.addEventListener('click', function () {
+    rtlToggled = !rtlToggled;
     rtlToggle.classList.toggle('deactivated');
     if (rtlToggle.classList.contains('deactivated')) {
       rtlToggle.style.transform = 'rotate(90deg)';
