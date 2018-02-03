@@ -69,6 +69,11 @@ javascript: (function() {
       padding: 0 0 0 64px;
     }
 
+    /* tate-chu-yoko hack */
+    .num {
+      text-combine-upright: all;
+    }
+
     #container {
       text-combine-upright: digits 4;
       max-width: 100% !important;
@@ -180,6 +185,34 @@ javascript: (function() {
   `;
 
   let rtlToggled = true;
+
+  function tateChuYokoify() {
+    function walkText(node) {
+      const regex = /([\d０-９]{1,4})/g;
+      let matches = [];
+      if (node.nodeType == 3) {
+        while (match = regex.exec(node.data)) {
+          match.index > 0 ? node.splitText(match.index) : node.splitText(match.index + match[0].length);
+          const replacementNode = document.createElement('span');
+          replacementNode.textContent = node.data;
+  
+          if (replacementNode.textContent.match(/^[\d０-９]{1,4}$/)) {
+            replacementNode.className = 'num';
+          }
+  
+          node.replaceWith(replacementNode);
+        }
+      }
+
+      if (node.nodeType == 1 && node.nodeName != 'SCRIPT') {
+        for (var i = 0; i < node.childNodes.length; i += 1) {
+          walkText(node.childNodes[i]);
+        }
+      }
+    }
+    walkText(document.body);
+  }
+  tateChuYokoify();  
 
   const style = document.createElement('style');
   style.id = 'rtl-style';

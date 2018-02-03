@@ -20,10 +20,10 @@ See the [project page](https://gyng.github.io/rtl-reader-view).
 * Defaults to ja fonts, overridden by `lang=zh`
 * Vertical punctuation
 * `text-emphasis` on `<emp>` tags [圏点](https://ja.wikipedia.org/wiki/%E5%9C%8F%E7%82%B9), [着重号](https://zh.wikipedia.org/wiki/%E7%9D%80%E9%87%8D%E5%8F%B7)
+* Simulated upright [縦中横](https://ja.wikipedia.org/wiki/%E7%B8%A6%E4%B8%AD%E6%A8%AA) (tate chu yoko) for digits: `text-combine-upright: digits 4;` (native not supported in Firefox)
 
 ### Unsupported
 
-* Upright [縦中横](https://ja.wikipedia.org/wiki/%E7%B8%A6%E4%B8%AD%E6%A8%AA) (tate chu yoko) for digits: `text-combine-upright: digits 4;`
 * Upright list markers
 * Underlines on the left: `text-underline-position: left;`
 * Hanging punctuation: `hanging-punctuation: end;`
